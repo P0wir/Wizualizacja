@@ -4,16 +4,16 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-a = 6
-b = 6
-
-if a > b:
-    print('liczba a jest wieksza od liczby b')
-elif a < b:
-    print('liczba a jest mniejsza od liczby b')
-else:
-    print('liczby sa rowne')
-
+#a = 6
+#b = 6
+#
+#if a > b:
+#    print('liczba a jest wieksza od liczby b')
+#elif a < b:
+#    print('liczba a jest mniejsza od liczby b')
+#else:
+#    print('liczby sa rowne')
+#
 #a = input('wpisz liczbę: ')
 #print(a)
 #print(type(a))
@@ -57,14 +57,46 @@ else:
 #        licznik += 1
 #else:
 #    print('zadna z wartosci nie dala odpowiedniego wyniku')
-lista1 = [4,6,8,2,3,9]
-lista2 = [2,1,3,7]
-suma = []
-for a in lista1:
-    for b in lista2:
-        wynik = a+b
-        suma.append(wynik)
-    print(suma)
+#lista1 = [4,6,8,2,3,9]
+#lista2 = [2,1,3,7]
+#suma = []
+#for a in lista1:
+#    for b in lista2:
+#        wynik = a+b
+#        suma.append(wynik)
+#    print(suma)
+#
+#a = input("wczytaj pierwsza liczbe: ")
+#b = input("wczytaj drugą liczbę: ")
+#try:
+#    a = int(a)
+#   b = int(b)
+#    wynik = a/b
+#    print(wynik)
+#except ZeroDivisionError:
+#    print('nie można dzielić przez 0')
+#except ValueError:
+#    print('nie wczytano liczby calkowitej')
 
+lista = ['a',5, 5.5, [1,2,3]]
+slownik = {5:40, 'a':'b'}
+a = lista[0]
+print(slownik[a])
+
+print(lista)
+lista.append(20)
+print(lista)
+slownik[20] = 50
+b = lista[4]
+print(slownik[b])
+lista.reverse()
+print(lista)
+listaa = [1,3,5,2,6,4]
+listaa.sort()
+print(listaa)
+listaa.pop(3)
+print(listaa)
+lista.extend(listaa)
+print(lista)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
