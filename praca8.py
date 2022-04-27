@@ -16,7 +16,7 @@ print(df[df['Imie']=='MATEUSZ'])
 print(df.agg({'Liczba': ['sum']}))
 print(df.where((df.Rok >= 2000) & (df.Rok <= 2005)).groupby(by='Rok').agg({'Liczba': ['sum']}))
 print(df.groupby(by='Plec').agg({'Liczba': ['sum']}))
-print(df[df.Plec == 'K'].groupby(by='Rok').agg({'Liczba': ['max']}))
+print(df.sort_values('Liczba', ascending=False).groupby(['Rok','Plec']).nth(0))
 
 df=pd.read_csv('zamowienia.csv',header=0,sep=';',decimal='.')
 print(df)
