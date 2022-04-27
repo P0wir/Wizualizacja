@@ -11,14 +11,12 @@ print(df)
 print()
 
 #zadanie 2
-#1
 print(df[(df['Liczba'] > 1000 ) & (df['Rok'] == 2002)])
-#2
 print(df[df['Imie']=='MATEUSZ'])
-#3
 print(df.agg({'Liczba': ['sum']}))
-#4
-print(df.agg({'Liczba': ['sum']}).where['Rok'] == 2000)
+print(df.where((df.Rok >= 2000) & (df.Rok <= 2005)).groupby(by='Rok').agg({'Liczba': ['sum']}))
+print(df.groupby(by='Plec').agg({'Liczba': ['sum']}))
+print(df[df.Plec == 'K'].groupby(by='Rok').agg({'Liczba': ['max']}))
 
 df=pd.read_csv('zamowienia.csv',header=0,sep=';',decimal='.')
 print(df)
