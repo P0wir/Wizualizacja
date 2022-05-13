@@ -67,3 +67,25 @@ d=np.abs(x-y)
 plt.scatter(x,y, c= np.random.randint(0,180,150), s=d)
 plt.show()
 
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+xlsx = pd.ExcelFile('imiona.xlsx')
+df = pd.read_excel(xlsx, header=0)
+
+a = df['Liczba'][ df['Plec'] == "M" ].sum()
+b = df['Liczba'][ df['Plec'] == "K" ].sum()
+print(a)
+print(b)
+
+c = df.groupby(["Rok", "Plec"])["Liczba"].sum()
+a_list = [a,b]
+plec = ["chlopcy","dziewczynki"]
+
+plt.bar(x = plec , height=a_list)
+plt.xlabel('Plec')
+plt.ylabel('Urodzenia w mln')
+plt.show()
+
+print(c)
