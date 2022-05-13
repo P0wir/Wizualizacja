@@ -49,3 +49,21 @@ plt.xlabel("x")
 plt.ylabel("sin(x), cos(x)")
 plt.title("wykres funkcji sin(x) i cos(x) x [1,30]")
 plt.show()
+
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+x = []
+y = []
+
+col_list = ["sepal length", "sepal width"]
+df = pd.read_csv('iris.csv', skipinitialspace=True, usecols=col_list)
+
+
+x = df["sepal length"]
+y = df["sepal width"]
+d=np.abs(x-y)
+plt.scatter(x,y, c= np.random.randint(0,180,150), s=d)
+plt.show()
+
